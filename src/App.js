@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
-import Memo from './mome/Memo';
+import Memo from './memo/Memo';
 import AddForm from './memo/AddForm';
 import findForm from './memo/FindForm';
 import DelForm from './memo/DelForm';
