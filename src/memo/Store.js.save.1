@@ -1,0 +1,101 @@
+import { createStore } from 'redux';
+OAOOAOOBOBBO
+const initData = {
+    data:[{message: 'sample data', created: new Date()}],
+    message:B 'please type message:',
+    mode:'defOBOBOOBault',
+    fdata:[]OB
+BO
+};OOO
+console.log(initData)
+//レBBBBOOOOBOABOAOデューサー
+
+export function meOOBOmoReducer(state = initData, action){
+    switch(action.typeOOBO){
+        case 'ADD':BBBOOOBOBBO
+            return addReduce(sOBOOtate, action);
+
+        case 'DELETE':
+            return findReduce(statOBOe, action);
+BOO
+   BBB     default:
+            return state;
+    }
+}
+
+//レデュースアクション  
+
+//メモ追加のレデュース処理 
+function addReduce(state, action){
+    let data = {
+        message: action.message,
+        created:new Date()
+    };
+    let newdata = state.data.slice();
+    newdata.unshift(data);
+    return{
+        data:newdata,
+        message:'Added!',
+        mode:'default',
+        fdata:[]
+    };
+}
+
+//メモ検索のレデュース処理
+function findReduce(state, action){
+	let f = action.find;
+	let fdata = [];
+	state.data.forEach((value)=>{
+		if(value.messages.indexOf(f) >= 0 ){
+			fdata.push(value);
+		}
+	})
+	return {
+		data:state.data,
+		message:'find"' + f + '":',
+		mode: 'find',
+		fdata: fdata
+	};
+}
+
+//メモ削除のレデュース処理
+function deleteReduce(state, action){
+	let newdata = state.data.slice();
+	newdata.splice(action.index, 1);
+	return{
+		data:newdata,
+		message: 'delete"' + action.index + '":',
+		mode: 'delete',
+		fdata: []
+	}
+}
+
+//アクションクリエーター 
+//(アクションクリエーターはアクションを作成する関数)
+
+//メモ追加のアクション
+export function addMemo (text) {
+	return {
+		type: 'ADD',
+		message: text
+	}
+}
+
+//メモ削除のアクション
+export function deleteMemo (num) {
+	return {
+		type: 'DELETE',
+		index: num
+	}
+}
+
+//メモ検索のアクション
+export function findMemo (text){
+	return {
+		type: 'FIND',
+		find:text
+	}
+}
+
+//ストアを作成
+export default createStore(memoReducer);

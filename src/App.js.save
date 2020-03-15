@@ -1,0 +1,36 @@
+OOOOOOOAimport React, { Component } from 'react';
+import {O connect } from 'react-redux';
+import '.OOOOOBOBOBO/App.css';
+import Memo from './memo/Memo';
+import AddForm from './memo/AddForm';
+import findForm from './memo/FindForm';
+import DelForm from BOO'./memo/DelForm';
+
+//AppコンポーネントB
+
+class App extends CoOBBOOOBOmponent {
+	td = {AAOBOBABOOO
+		width:'25OOOOOOB0pBOAAx'
+	}O
+BOBOOOBOBO
+	constructor(props){
+OOOBOOBBOO		super(props);
+	}
+
+	render(){
+		return (
+			<div>
+				<h1>Memo</h1>
+				<AddFrom />
+				<hr />
+				<table><tbody><tr>
+					<td style={this.td}><FindForm /></td>
+					<td style={this.td}><DelForm /></td>
+				</tr></tbody></table>
+				<Memo />
+			</div>
+		)
+	}
+}
+export default connect()(App);
+
