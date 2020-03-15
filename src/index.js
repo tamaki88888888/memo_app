@@ -6,7 +6,7 @@ import App from './App';
 import MemoStore from './memo/Store'  //(水道管)ストアからMemoStoreという名前でインポ
 
 ReactDOM.render(
-	<Provider store={MemoStore}>  //プロバイダー(コップ）ストアはメモストアです
+	<Provider store={MemoStore}>  
 		<App />
 	</Provider>,
 	document.getElementById('root')
