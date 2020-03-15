@@ -7,12 +7,12 @@ class AddForm extends Component {
 		fontSize: '16pt',
 		color:'#006',
 		padding:'1px',
-		margin: '5px 0px',
+		margin: '5px 0px'
 	}
 	btn = {
 		fontSize:'14pt',
 		color: '#006',
-		padding: '2px 10px',
+		padding: '2px 10px'
 	}
 	message = {
 		fontSize: '16pt',
@@ -23,7 +23,7 @@ class AddForm extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			messsage: ''
+			message: ''
 		}
 		this.doChange = this.doChange.bind(this);
 		this.doAction = this.doAction.bind(this);
@@ -41,7 +41,7 @@ class AddForm extends Component {
 		this.props.dispatch(action);
 		this.setState({
 			message:''
-		})
+		});
 	}
 
 	render(){

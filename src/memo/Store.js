@@ -5,8 +5,8 @@ const initData = {
     message: 'please type message:',
     mode:'default',
     fdata:[]
-};
 
+};
 //レデューサー
 
 export function memoReducer(state = initData, action){
@@ -45,7 +45,7 @@ function findReduce(state, action){
 	let f = action.find;
 	let fdata = [];
 	state.data.forEach((value)=>{
-		if(value.messages.indexOf(f) >= 0 ){
+		if(value.message.indexOf(f) >= 0 ){
 			fdata.push(value);
 		}
 	})
