@@ -15,6 +15,9 @@ export function memoReducer(state = initData, action){
             return addReduce(state, action);
 
         case 'DELETE':
+            return deleteReduce(state, action);
+
+        case 'FIND':
             return findReduce(state, action);
 
         default:
