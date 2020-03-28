@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Router from 'next/router';
 import firebase from 'firebase';
 import Lib from '../static/address_lib';
-import Account from '../component/Account';
+import Account from '../components/Account';
 
 class Address extends Component {
 	style = {
@@ -27,18 +27,15 @@ class Address extends Component {
 	//Firebaseからデータを取得
 	getFireData(){
 		if(this.props.email == undefined||this.props.email == ''){ return; }
-	let email = Lib.encodeEmail(this.props.email);
-	let db = firebase.database();
-	let ref = db.ref('address/');
-	let self = this;
-	ref.orderByKey()
+		let email = Lib.encodeEmail(this.props.email);
+		let db = firebase.database();
+		let ref = db.ref('address/');
+		let self = this;
+		ref.orderByKey()
 		.equalTo(email)
 		.on('value', (snapshot)=>{
 			let d = Lib.deepcopy(snapshot.val());
 			this.props.dispatch({
-			type:'UPDATE_USER,
-			value:{
-				login:this.props.dispatch({
 				type:'UPDATE_USER',
 				value:{
 					login:this.props.login,
@@ -47,7 +44,7 @@ class Address extends Component {
 					data:d,
 					items:self.getItem(d)
 				}
-			});
+			})
 		})
 	}
 
@@ -88,5 +85,5 @@ class Address extends Component {
 	}
 }
 
-address = connect((state)=>state)(Address);
-export detault Address;
+Address = connect((state)=>state)(Address);
+export default Address;

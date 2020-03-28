@@ -1,4 +1,4 @@
-import Link from 'newxt/link';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 
 import Address from '../components/Address';

@@ -8,7 +8,7 @@ class Account extends Component {
 		padding:'5px 10px'
 	}
 
-	constructor(props);
+	constructor(props){
 		super(props);
 		//this.login_check();
 		this.login_check = this.login_check.bind(this);
@@ -23,14 +23,15 @@ class Account extends Component {
 			this.props.dispatch({
 				type:'UPDATE_USER',
 				value:{
-				login:true,
-				username: result.user.displayName,
-				email: result.user.email,
-				data:this.props.data,
-				items:this.props.items
-			}
-		});
-		this.props.onLogined();
+					login:true,
+					username: result.user.displayName,
+					email: result.user.email,
+					data:this.props.data,
+					items:this.props.items
+				}
+			});
+			this.props.onLogined();
+		})
 	}
 
 	//ログアウト処理
