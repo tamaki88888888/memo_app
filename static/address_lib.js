@@ -8,7 +8,7 @@ class Lib{
 	}
 	
 	static decodeEmail(val){
-		return val.split('*').join('*);
+		return val.split('*').join('*');
 	}
 }
 
